@@ -1,0 +1,30 @@
+.ralatedproduct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+}
+.ralatedproduct h1{
+    color: black;
+    font-size: 50px;
+    font-weight: 600;
+}
+.ralatedproduct  hr{
+         width: 200px;
+         height: 6px;
+         border-radius: 10px;
+         background: #252525;
+}
+.relatedproduct-item{
+    margin-top: 50px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    
+}
+.relatedproduct-item img{
+    width: 100%;
+    height: 400px; 
+       
+}
