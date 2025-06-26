@@ -19,6 +19,7 @@ function App() {
   return (
     <div>
       <BrowserRouter basename="/Projects/dist/">
+      {/* <BrowserRouter> */}
         <Navbar />
         <Routes>
           <Route path="/" element={<Shop />} />

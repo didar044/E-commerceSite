@@ -95,9 +95,9 @@
     
 } 
 /* end */
-/* .nav-login-cart button:active{
+ /* .nav-login-cart button:active{
     background: #f3f3f3;
-} */
+}  */
 .nav-cart-count{
     width: 22px;
     height: 22px;
@@ -112,3 +112,132 @@
     color: #f3f3f3;
 
 }
+/* Responsive Navbar */
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 10001;
+    margin-left: auto;
+}
+.hamburger span {
+    display: block;
+    height: 3px;
+    background: #333;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Animate hamburger to X when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Wrap menu + login/cart for mobile toggle */
+.nav-menu-login-cart-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide menu + login/cart by default on mobile */
+    .nav-menu-login-cart-wrapper {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 70px; /* height of navbar approx */
+        right: 0;
+        width: 100%;
+        padding: 20px 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        z-index: 10000;
+    }
+
+    /* Show menu when open */
+    .nav-menu-login-cart-wrapper.open {
+        display: flex;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu hr {
+        width: 50%;
+        height: 2px;
+        margin: 4px auto 0;
+    }
+
+    .nav-login-cart {
+        justify-content: center;
+        gap: 30px;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .nav-login-cart button {
+        width: 120px;
+        height: 44px;
+        font-size: 16px;
+    }
+
+    
+}
+
+.cart-icon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-cart-count {
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-left: -40px;
+        position: absolute;
+        top: 30px;
+        right: 60px;
+}
+
+/* Adjust cart count size for desktop and mobile */
+@media (min-width: 769px) {
+  .nav-cart-count {
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+    top: -8px;
+    right: -8px;
+  }
+}
+
+
+

@@ -1,34 +1,44 @@
-.shopcategory-banner{
+.shopcategory-banner {
     display: block;
     margin: 130px auto;
     width: 82%;
+    max-width: 1200px;
 }
-.shopcate-index{
+
+.shopcate-index {
     display: flex;
     margin: 0px 170px;
     justify-content: space-between;
     align-items: center;
-    
 }
-.shopcat-sort{
-     padding: 10px 20px;
-     border-radius: 40px;
-     border: 1px solid gray;
+
+/* Sorting button */
+.shopcat-sort {
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 1px solid gray;
+    cursor: pointer;
 }
-.shopcate-index  p span{
+
+.shopcate-index p span {
     font-weight: 600;
 }
-.sc-product{
+
+.sc-product {
     margin: 20px 170px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     row-gap: 80px;
+    column-gap: 30px;
 }
-.sc-product img{
+
+.sc-product img {
     width: 100%;
-    height: 400px;    
+    height: 400px;
+    object-fit: cover;
 }
-.sc-loadmore{
+
+.sc-loadmore {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,4 +49,62 @@
     background: #ededed;
     font-size: 18px;
     font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .shopcate-index,
+    .sc-product,
+    .shopcategory-banner {
+        margin: 0 40px;
+        width: auto;
+    }
+    .sc-product {
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 60px;
+        column-gap: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .shopcate-index,
+    .sc-product,
+    .shopcategory-banner {
+        margin: 0 20px;
+    }
+    .sc-product {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 50px;
+        column-gap: 15px;
+    }
+    .shopcat-sort {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shopcate-index {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 0 15px;
+    }
+    .sc-product {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+        margin: 20px 15px;
+    }
+    .shopcategory-banner {
+        width: 100%;
+        margin: 60px auto 40px;
+    }
+    .sc-loadmore {
+        width: 100%;
+        margin: 60px 15px;
+        height: 60px;
+        font-size: 16px;
+    }
 }

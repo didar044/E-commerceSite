@@ -1,22 +1,31 @@
-.place-orders{
+
+
+
+
+
+.place-orders {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 200px;
+    gap: 50px; /* reduced gap */
     margin-top: 160px;
-    padding-left: 100px;
+    padding: 0 100px;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* for responsiveness */
 }
-.place-order-left{
-    width: 100%;
-    /* font-size: max(30%,50px); */
-    font-size: 80px;
+
+.place-order-left {
+    flex: 1 1 500px;
+    max-width: 600px;
 }
-.place-order-left .title{
+
+.place-order-left .title {
     font-size: 30px;
     font-weight: 600;
-    
+    margin-bottom: 20px;
 }
-.place-order-left input{
+
+.place-order-left input {
     margin-bottom: 15px;
     width: 100%;
     padding: 10px;
@@ -24,20 +33,92 @@
     border-radius: 4px;
     outline-color: tomato;
     font-size: 20px;
+    box-sizing: border-box;
 }
 
-.place-order-left .multi-fields{
+.place-order-left .multi-fields {
     display: flex;
     width: 100%;
-     gap: 100px;
-     
+    gap: 20px; /* reduced gap */
 }
-.place-order-right{
+
+.place-order-left .multi-fields input {
+    flex: 1;
+}
+
+.place-order-right {
+    flex: 1 1 300px;
+    max-width: 400px;
+}
+
+.ci-t h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.cart-t-i {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.cart-t-i h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.place-orders button {
     width: 100%;
-    max-width: max(40%, 500px);
+    padding: 15px 0;
+    font-size: 20px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+   
+
+
+
+    height: 72px;
+    background: orange;
+    margin-top: 30px;
+    font-weight: 500;
+    
 }
-.place-orders .k{
-    width: 10px;
-    height: 660px;
+
+/* Vertical separator */
+.separator {
+    width: 2px;
     background: tomato;
+    height: auto;
+    min-height: 400px;
+    align-self: stretch;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .place-orders {
+        flex-direction: column;
+        padding: 0 20px;
+        margin-top: 80px;
+        gap: 40px;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    .place-order-left,
+    .place-order-right {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .place-order-left .multi-fields {
+        flex-direction: column;
+        gap: 15px;
+    }
 }

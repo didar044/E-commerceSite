@@ -1,28 +1,34 @@
-.loginsingup{
+.loginsingup {
     width: 100%;
-    height: 80vh;
-    /* background:#fce3fe; */
-          
+    min-height: 80vh;
     background: #e3feec;
     padding-top: 150px;
+    box-sizing: border-box;
 }
-.loginsingup-container{
+
+.loginsingup-container {
     width: 580px;
-    height: 600px;
+    max-width: 95%;
+    height: auto;
     margin: auto;
     padding: 40px 60px;
     background: white;
+    box-sizing: border-box;
+    border-radius: 8px;
 }
-.loginsingup-container h1{
-    margin: 20px 0px;
+
+.loginsingup-container h1 {
+    margin: 20px 0;
 }
-.loginsingup-fields{
+
+.loginsingup-fields {
     display: flex;
     flex-direction: column;
     gap: 29px;
     margin-top: 30px;
 }
-.loginsingup-fields input{
+
+.loginsingup-fields input {
     height: 72px;
     width: 100%;
     padding-left: 20px;
@@ -30,9 +36,12 @@
     border: 1px solid #c9c9c9;
     color: #5c5c5c;
     font-size: 18px;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
-.loginsingup-container .bc{
-    width: 580px;
+
+.loginsingup-container .bc {
+    width: 100%;
     height: 72px;
     color: white;
     background: orange;
@@ -41,18 +50,25 @@
     font-size: 24px;
     font-weight: 500;
     cursor: pointer;
+    border-radius: 5px;
 }
-.loginsingup-login{
+
+.loginsingup-login {
     margin-top: 20px;
     color: #5c5c5c;
     font-size: 18px;
     font-weight: 500;
 }
-.loginsingup-login .bl{
+
+.loginsingup-login .bl {
     color: red;
     font-weight: 600;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
-.login-agree{
+
+.login-agree {
     display: flex;
     align-items: center;
     margin-top: 25px;
@@ -60,4 +76,75 @@
     color: #5c5c5c;
     font-size: 18px;
     font-weight: 500;
+}
+
+.login-agree input {
+    width: 18px;
+    height: 18px;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .loginsingup-container {
+        padding: 30px 40px;
+        width: 90%;
+    }
+
+    .loginsingup-fields input {
+        height: 60px;
+        font-size: 16px;
+        padding-left: 15px;
+    }
+
+    .loginsingup-container .bc {
+        height: 60px;
+        font-size: 20px;
+    }
+
+    .loginsingup-login {
+        font-size: 16px;
+    }
+
+    .login-agree {
+        font-size: 16px;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loginsingup {
+        padding-top: 100px;
+    }
+
+    .loginsingup-container {
+        padding: 20px 25px;
+        width: 100%;
+    }
+
+    .loginsingup-fields input {
+        height: 50px;
+        font-size: 14px;
+        padding-left: 10px;
+    }
+
+    .loginsingup-container .bc {
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .loginsingup-login {
+        font-size: 14px;
+    }
+
+    .login-agree {
+        font-size: 14px;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .login-agree p {
+        margin: 0;
+        flex: 1 1 100%;
+    }
 }
